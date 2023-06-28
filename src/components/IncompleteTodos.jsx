@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
-import { EditTodoDialog } from "/project/todo-fire/src/components/EditTodoDialog";
+import { EditTodoDialog } from "/project/backend-mysql/src/components/EditTodoDialog";
 
 export const IncompleteTodos = (props) => {
-  const {
-    todos,
-    onClickComplete,
-    onClickDelete,
-    readOnly,
-    onUpdateTodo
-  } = props;
+  const { todos, onClickComplete, onClickDelete, readOnly, onUpdateTodo } =
+    props;
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingTodo, setEditingTodo] = useState(null);
 

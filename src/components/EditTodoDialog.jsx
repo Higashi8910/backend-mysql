@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
-import godImage from "/project/todo-fire/src/components/godImage.png";
+import godImage from "/project/backend-mysql/src/components/godImage.png";
 import { useForm } from "react-hook-form";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
@@ -23,7 +23,7 @@ export const EditTodoDialog = (props) => {
   const priorityOptions = [
     { value: "小", label: "小" },
     { value: "中", label: "中" },
-    { value: "大", label: "大" }
+    { value: "大", label: "大" },
   ];
   const [selectedPriority, setSelectedPriority] = useState(null);
 
@@ -33,7 +33,7 @@ export const EditTodoDialog = (props) => {
     watch,
     formState: { errors },
     setValue,
-    setError
+    setError,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -138,7 +138,7 @@ export const EditTodoDialog = (props) => {
       } else {
         setSelectedPriority({
           value: props.initialTodo.priority,
-          label: props.initialTodo.priority
+          label: props.initialTodo.priority,
         });
       }
     }

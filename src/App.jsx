@@ -9,7 +9,7 @@ import {
   deleteDoc,
   doc,
   getDocs,
-  updateDoc
+  updateDoc,
 } from "firebase/firestore";
 import TodoGraph from "./TodoGraph";
 
@@ -20,7 +20,7 @@ export const App = ({
   incompleteTodos,
   setCompleteTodos,
   setIncompleteTodos,
-  showGraph = true
+  showGraph = true,
 }) => {
   // const { showGraph = false } = props;
   //const [変数名, 変数に値を設定する関数]
@@ -53,13 +53,13 @@ export const App = ({
       complete: false,
       startDate: startDate.toISOString().substring(0, 10),
       endDate: endDate.toISOString().substring(0, 10),
-      priority: priority
+      priority: priority,
     };
     await addDoc(collection(db, "todos"), newTodo);
     const todoSnapshot = await getDocs(collection(db, "todos"));
     const todoList = todoSnapshot.docs.map((doc) => ({
       ...doc.data(),
-      id: doc.id
+      id: doc.id,
     }));
     setIncompleteTodos(todoList.filter((todo) => !todo.complete));
     setCompleteTodos(todoList.filter((todo) => todo.complete));
@@ -77,7 +77,7 @@ export const App = ({
     console.log(endDate);
     console.log(priority);
     const updateData = {
-      title: updatedText
+      title: updatedText,
     };
 
     if (startDate && endDate) {
@@ -94,7 +94,7 @@ export const App = ({
     const todoSnapshot = await getDocs(collection(db, "todos"));
     const todoList = todoSnapshot.docs.map((doc) => ({
       ...doc.data(),
-      id: doc.id
+      id: doc.id,
     }));
     setIncompleteTodos(todoList.filter((todo) => !todo.complete));
     setCompleteTodos(todoList.filter((todo) => todo.complete));

@@ -18,7 +18,7 @@ export const Router = () => {
       const todoSnapshot = await getDocs(todoCollection);
       const todoList = todoSnapshot.docs.map((doc) => ({
         ...doc.data(),
-        id: doc.id
+        id: doc.id,
       }));
       setIncompleteTodos(todoList.filter((todo) => !todo.complete));
       setCompleteTodos(todoList.filter((todo) => todo.complete));
