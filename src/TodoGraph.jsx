@@ -6,7 +6,7 @@ const TodoGraph = ({ completeTodos, incompleteTodos }) => {
     high: { complete: 0, incomplete: 0 },
     medium: { complete: 0, incomplete: 0 },
     low: { complete: 0, incomplete: 0 },
-    other: { complete: 0, incomplete: 0 }
+    other: { complete: 0, incomplete: 0 },
   };
 
   completeTodos.forEach((todo) => {
@@ -41,8 +41,8 @@ const TodoGraph = ({ completeTodos, incompleteTodos }) => {
           priorityCounts.high.complete,
           priorityCounts.medium.complete,
           priorityCounts.low.complete,
-          priorityCounts.other.complete
-        ]
+          priorityCounts.other.complete,
+        ],
       },
       {
         name: "未完了",
@@ -50,27 +50,27 @@ const TodoGraph = ({ completeTodos, incompleteTodos }) => {
           priorityCounts.high.incomplete,
           priorityCounts.medium.incomplete,
           priorityCounts.low.incomplete,
-          priorityCounts.other.incomplete
-        ]
-      }
+          priorityCounts.other.incomplete,
+        ],
+      },
     ],
     options: {
       chart: {
         type: "bar",
-        height: 350
+        height: 350,
       },
       plotOptions: {
         bar: {
           horizontal: false,
           columnWidth: "55%",
-          endingShape: "rounded"
-        }
+          endingShape: "rounded",
+        },
       },
       dataLabels: {
-        enabled: false
+        enabled: false,
       },
       xaxis: {
-        categories: ["大", "中", "小", "その他"]
+        categories: ["大", "中", "小", "その他"],
       },
       yaxis: {
         title: {
@@ -80,15 +80,15 @@ const TodoGraph = ({ completeTodos, incompleteTodos }) => {
           // },
           rotate: 0, // タイトルを縦書きにするために回転させる
           offsetX: 0, // タイトルの位置を調整
-          offsetY: 0 // タイトルの位置を調整
-        }
+          offsetY: 0, // タイトルの位置を調整
+        },
       },
       colors: ["#008FFB", "#FF4560"],
       legend: {
         show: true,
-        position: "bottom"
-      }
-    }
+        position: "bottom",
+      },
+    },
   };
 
   const chartOptions = {
@@ -96,8 +96,8 @@ const TodoGraph = ({ completeTodos, incompleteTodos }) => {
     colors: ["#008FFB", "#FF4560"],
     legend: {
       show: true,
-      position: "bottom"
-    }
+      position: "bottom",
+    },
   };
 
   return (

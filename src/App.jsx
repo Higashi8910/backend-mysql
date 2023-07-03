@@ -11,7 +11,7 @@ import {
   getDocs,
   updateDoc
 } from "firebase/firestore";
-import TodoGraph from "./TodoGraph";
+import TodoGraph from "/project/backend-mysql/src";
 
 import db from "./firebase";
 

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
-import godImage from "/project/todo-fire/src/components/godImage.png";
+import godImage from "/project/backend-mysql/src/components/godImage.png";
 import { useForm } from "react-hook-form";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
-import { EditTodoDialog } from "/project/todo-fire/src/components/EditTodoDialog";
+import { EditTodoDialog } from "/project/backend-mysql/src/components/EditTodoDialog";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -14,11 +14,11 @@ const style = {
   height: "30px",
   borderRadius: "8px",
   padding: "8px",
-  margin: "8px"
+  margin: "8px",
 };
 
 const inputStyle = {
-  width: "87%" // ここで入力ボックスの幅を設定
+  width: "87%", // ここで入力ボックスの幅を設定
 };
 
 export const InputTodo = (props) => {
